@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0C3050;
+  padding: 5px 0 5px 25px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.button-container {
+  padding: 0 15px;
+  cursor: pointer;
+  align-items: center;
+}
+
+h4{
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  color: white;
+  vertical-align: middle;
+}
+
+.button-container:hover {
+  color: #CDECF7;
+}
+
+mat-icon {
+  font-size: 16px;
+  width: auto;
+  height: auto;
+}
+
+#htc {
+  color: white;
+  text-decoration: none;
+  font-weight: 550;
+  font-size: 2em;
+  font-family: 'Hind', sans-serif;
+  font-style: italic;
+  letter-spacing: 0.3rem;
+}
+
+.logo {
+  margin: 10px 10px 10px 0;
+  height: 90%;
+}

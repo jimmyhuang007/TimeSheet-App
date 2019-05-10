@@ -1,0 +1,17 @@
+.header {
+  height: 45px;
+}
+
+.flex-container {
+  display: flex;
+  height: calc(100vh - 45px);
+}
+
+.sidebar-container {
+  width: 17%;
+}
+
+.main-container {
+  flex-grow: 1;
+  padding: 10px;
+}

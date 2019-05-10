@@ -1,0 +1,35 @@
+<div class="header">
+  <!-- <div class="header-left">
+    <img class="logo" width="auto" height="auto" alt="Home trust logo" src="src\assets\logo_white.png">
+    <span>home trusts</span>
+  </div>
+
+
+  <div class="header-right">
+    <a routerLink="#summary" class="header-summary"> Summary </a>
+    <a routerLink="login" class="button">
+      <span>Logout</span>
+      <mat-icon>logout</mat-icon>
+    </a>
+  </div> -->
+  <div class="flex-container">
+    <img class="logo" width="auto"  alt="Home trust logo" src="../../assets/logo_white.png">
+    <!--<i style="color: white;">Home Trust Company</i>-->
+    <!--<span id="htc">Home Trust</span>-->
+  </div>
+  <div class="flex-container">
+    <div *ngIf="user.employeeType === 8" class="button-container">
+      <h4 (click)="payroll()">Payroll</h4>
+    </div>
+    <div *ngIf="user.employeeType === 9" class="button-container">
+      <h4 (click)="hr()">HR</h4>
+    </div>
+    <div class="button-container">
+      <h4 (click)="dashboard()">Dashboard</h4>
+    </div>
+    <div class="button-container">
+      <h4 (click)="logout()">Logout&nbsp; <mat-icon>logout</mat-icon></h4>
+    </div>
+
+  </div>
+</div>

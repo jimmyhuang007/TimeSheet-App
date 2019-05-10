@@ -1,0 +1,37 @@
+<mat-grid-list cols="2" rowHeight="4:1" gutterSize="40">
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1" class="welcometohome">
+    Welcome Home
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="4">
+    <mat-grid-tile-header>CALENDAR</mat-grid-tile-header>
+    <div class="cal-containter"><mat-calendar></mat-calendar></div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="2">
+    <mat-card-content>
+      <div class="card back">
+        <div class="yellow"></div>
+        <div class="top dots"></div>
+        <div class="personal-info">
+          <p>{{user.firstName}} {{user.lastName}}</p>
+          <p>{{user.positionTitle}}</p>
+          <p>{{user.departmentName}}</p>
+          <p>{{user.email}}</p>
+        </div>
+        <div class="bottom dots"></div>
+        <div class="pink"></div>
+      </div>
+    </mat-card-content>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="1" class="bot">
+    <a class="prev" (click)="after(-1)">&#10094;</a>
+    <a class="next" (click)="after(1)">&#10095;</a>
+    {{viewlst[i]}}
+  </mat-grid-tile>
+
+</mat-grid-list>
+
+

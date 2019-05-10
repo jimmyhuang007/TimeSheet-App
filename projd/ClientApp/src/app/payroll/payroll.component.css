@@ -1,0 +1,76 @@
+table {
+  width: 100%;
+  background-color: rgba(255, 247, 238, 0.459);
+}
+
+.payrolltable {
+  width: 80%;
+  margin: 5em;
+  height: auto;
+}
+
+.filter {
+  display: flex;
+  margin: 2em 0 0.6em 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.mat-form-field {
+  box-sizing: border-box;
+  width: 30%;
+  margin-right: 10em;
+}
+
+.mat-raised-button {
+  width: 12em;
+  height: 100%;
+  background-color: #e2e2e296;
+  border-radius: 5px;
+}
+
+.payrolltable {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 94%;
+  border-radius: 10px;
+}
+
+th {
+  font-weight: bold;
+}
+
+td, th {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.8rem;
+  width: 10%;
+  height: auto;
+  overflow-y: auto;
+}
+
+.mat-paginator {
+  font-weight: bold;
+}
+
+.mat-card {
+  display: flex;
+  background: url("../../assets/setting.jpg");
+  padding: 30px;
+  background-size: cover;
+  color: white;
+  font-size: 18px;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mat-form-field {
+  width: 200px !important;
+}
+
+.export {
+  right: 10px;
+  top: 10px;
+  background: green;
+  color: white;
+}

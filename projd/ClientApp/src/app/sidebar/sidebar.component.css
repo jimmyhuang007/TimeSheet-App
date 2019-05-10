@@ -1,0 +1,123 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.topblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 32%;
+  background-color: rgba(17,71,118,1);
+  position: relative;
+}
+
+#person {
+  width: 80px;
+  height: auto;
+  margin: 15px 0;
+}
+
+#setting {
+  position: absolute;
+  bottom: 48%;
+  right: 25%;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+}
+
+.identification {
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+.username{
+  font-size: 15px;
+  font-weight: 500;
+}
+p {
+  padding: 0 5px;
+  margin: 6px 0;
+}
+
+.timeblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70%;
+}
+
+.biweekly {
+  display: flex;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+  border-top: 1px solid #c0c0c0;
+  cursor: pointer;
+}
+
+.timer {
+  font-size: 2.5em; /*control the size of the image here*/
+  margin: 0 0.5em;
+  width: 10%;
+  height: auto;
+}
+
+.content {
+  float: right;
+  width: 85%;
+  font-size: 13px;
+  color: #49494D;
+  text-align: left;
+  padding: 3px 5px
+}
+
+.mat-icon {
+  padding: 0 15px;
+  color: #333333;
+}
+
+.biweekly:hover {
+  background-color: #323256;
+}
+
+.biweekly:hover .mat-icon {
+    color: #FFFFFF
+ }
+
+.biweekly:hover .content {
+    color: #FFFFFF;
+}
+
+.green {
+  color: #339933;
+}
+
+.orange {
+  color: orange;
+}
+
+.yellow {
+  color: #9ACD32;
+}
+
+.red {
+  color: #CD5C5C;
+}
+
+.date-range {
+  color: #636369;
+}
+.name{
+  font-size: 14px;
+  color: #0c0c0d;
+}

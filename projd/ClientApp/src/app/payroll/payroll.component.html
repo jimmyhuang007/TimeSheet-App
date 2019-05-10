@@ -1,0 +1,72 @@
+<mat-card>
+  <h3>Payroll</h3>
+</mat-card>
+
+<div class="filter">
+
+  <mat-form-field style="left: 50px;">
+    <input matInput [matDatepicker]="picker1" [(ngModel)]="date1" placeholder="Start Date">
+    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field style="right: 50px;">
+    <input matInput [matDatepicker]="picker2" [(ngModel)]="date2" placeholder="End Date">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker2></mat-datepicker>
+  </mat-form-field>
+
+  <button mat-raised-button (click)="onSearch(date1, date2)" class="search" style="right: 50px;top: 10px;">Search</button>
+  <button mat-raised-button (click)="export()" class="export">Export</button>
+</div>
+
+<div class="payrolltable">
+  <table mat-table [dataSource]="Paydata" matSort>
+
+    <!-- Employee ID Column -->
+    <ng-container matColumnDef="Employee ID">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID </th>
+      <td mat-cell *matCellDef="let payrow"> {{payrow.employeeID}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="First Name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+      <td mat-cell *matCellDef="let payrow"> {{payrow.studentF}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Last Name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+      <td mat-cell *matCellDef="let payrow"> {{payrow.studentL}} </td>
+    </ng-container>
+
+    <!-- Manager Column -->
+    <ng-container matColumnDef="Manager">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Manager </th>
+      <td mat-cell *matCellDef="let payrow"> {{payrow.manager}} </td>
+    </ng-container>
+
+    <!-- Overtime Column -->
+    <ng-container matColumnDef="Regular Hours">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Regular Hours </th>
+      <td mat-cell *matCellDef="let payrow"> {{payrow.regular}} </td>
+    </ng-container>
+
+    <!-- Overtime Column -->
+    <ng-container matColumnDef="Overtime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Overtime </th>
+      <td mat-cell *matCellDef="let payrow"> {{payrow.overtime}} </td>
+    </ng-container>
+
+    <!-- Total Hour Column -->
+    <ng-container matColumnDef="Total Hours">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Hours </th>
+      <td mat-cell *matCellDef="let payrow"> {{payrow.total}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let payrow; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+</div>

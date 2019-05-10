@@ -1,0 +1,147 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding-right: 10px;
+  overflow-y: auto;
+}
+
+.mat-grid-list {
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.mat-form-field {
+  margin-left: 15px;
+  font-size: 15px;
+  transform: perspective(1px);
+}
+
+.mat-chip{
+  margin: 5px;
+}
+
+.mat-grid-tile {
+  background: white;
+  box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.5);
+}
+
+
+.dateimg {
+  width: 30px;
+  height: auto;
+}
+
+.backtop {
+  width: 10%;
+  height: 10%;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -60%);
+  font-size: 20px;
+  width: 600px;
+}
+
+.submit {
+  background-color: #cc00cc;
+  color: white;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.save {
+  background-color: #6eff33;
+  color: white;
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.mat-card{
+  display: flex;
+  background: url("../../assets/back2.jpg");
+  padding: 30px;
+  background-size: cover;
+  color : white;
+  font-size: 18px;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mat-card-footer{
+  padding:10px;
+  margin: 0;
+}
+
+.mat-card-footer div h5{
+  margin: 0;
+  font-weight: 300;
+}
+
+.mat-card-footer div{
+  flex-grow: 1;
+}
+
+.submit-button-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.submit-button-container > button {
+  margin-right: 10px;
+}
+
+::ng-deep mat-grid-tile-header{
+  background: rgba(5, 36, 110, 0.82) !important;
+  justify-content: center;
+}
+
+::ng-deep mat-grid-tile-footer{
+  flex-direction: row-reverse;
+  background: rgba(5, 36, 110, 0.82) !important;
+}
+
+.overlay{
+  background-color: #a6a6a6;
+  height: 100%;
+  width: 100%;
+  opacity: 0.1;
+  top: 0;
+  left: 0;
+  position: absolute;
+  padding: 0;
+  z-index: 500;
+  cursor: not-allowed;
+}
+
+.comments-container{
+  padding: 0 20px 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.comments-container > label{
+  display: block;
+  margin-bottom: 5px;
+  color: #333333;
+}
+
+.comments-container > textarea{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+small{
+  display: block;
+  color: red;
+}
+
+.bottext {
+  text-align: center;
+}

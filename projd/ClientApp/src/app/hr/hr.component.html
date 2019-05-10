@@ -1,0 +1,120 @@
+<mat-card>
+  <h3>Human Resources</h3>
+</mat-card>
+
+<div class="wrapper">
+
+  <!--<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Excel Update
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="excelupdatebox">
+        <button mat-raised-button class="button">Download</button>
+        <mat-icon class="arrow">arrow_right_alt</mat-icon>
+        <button mat-raised-button class="button">Delete</button>
+        <mat-icon class="arrow">arrow_right_alt</mat-icon>
+        <button mat-raised-button class="button">Upload</button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>-->
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Edit User
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="manualupdateflexbox">
+        <div class="manualupdatebox">
+          <mat-form-field class="dropdown">
+            <mat-select placeholder="Name" (selectionChange)="select($event.value)"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <mat-option *ngFor="let user of lstuser" [value]="user.employeeID">
+                {{user.lastName}}, {{user.firstName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="form_1">
+          <form [formGroup]="form1">
+            <mat-form-field><input matInput formControlName="loginID" placeholder="Login ID"></mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field><input matInput formControlName="passwordID" type='password' placeholder="Password"></mat-form-field><br />
+            <mat-form-field>
+              <mat-select formControlName="employeeType" placeholder="Employee Type">
+                <mat-option *ngFor="let role of roles" [value]="role.value">
+                  {{role.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <mat-form-field class="dropdown" *ngIf="form1.get('employeeType').value === 1">
+              <mat-select formControlName="managerID" placeholder="Manager">
+                <mat-option *ngFor="let user of managerlst" [value]="user.employeeID">
+                  {{user.lastName}}, {{user.firstName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field><br>
+            <mat-form-field><input matInput formControlName="lastName" placeholder="Last Name"></mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field><input matInput formControlName="firstName" placeholder="First Name"></mat-form-field><br>
+            <mat-form-field><input matInput formControlName="email" placeholder="Email"></mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field><input matInput formControlName="departmentName" placeholder="Department"></mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field><input matInput formControlName="positionTitle" placeholder="Position Title"></mat-form-field>
+          </form>
+        </div>
+      </div>
+      <div class="button_for_manual_update">
+        <button mat-raised-button (click)="delete()" color="warn" class="manualbutton">Delete</button>
+        <button mat-raised-button (click)="update()"color="primary" class="manualbutton">Update</button>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Create User
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div class="form_2">
+        <form [formGroup]="form2">
+          User: &nbsp;&nbsp;&nbsp;&nbsp;
+          <mat-form-field><input matInput formControlName="employeeID" (keypress)="numberOnly($event)" placeholder="Employee ID" type="number"></mat-form-field>&nbsp;&nbsp;&nbsp;
+          <mat-form-field>
+            <mat-select formControlName="employeeType" placeholder="Employee Type">
+              <mat-option *ngFor="let role of roles" [value]="role.value">
+                {{role.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field><br>
+          Login: &nbsp;&nbsp;
+          <mat-form-field><input matInput formControlName="loginID" placeholder="Login ID"></mat-form-field>&nbsp;&nbsp;&nbsp;
+          <mat-form-field><input matInput formControlName="passwordID" placeholder="Password"></mat-form-field><br>
+          Detail: &nbsp;&nbsp;
+          <mat-form-field><input matInput formControlName="lastName" placeholder="Last Name"></mat-form-field>&nbsp;&nbsp;&nbsp;
+          <mat-form-field><input matInput formControlName="firstName" placeholder="First Name"></mat-form-field>&nbsp;&nbsp;&nbsp;
+          <mat-form-field class="dropdown" *ngIf="form2.get('employeeType').value === 1">
+            <mat-select formControlName="managerID" placeholder="Manager">
+              <mat-option *ngFor="let user of managerlst" [value]="user.employeeID">
+                {{user.lastName}}, {{user.firstName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <mat-form-field><input matInput formControlName="email" placeholder="Email"></mat-form-field>&nbsp;&nbsp;&nbsp;
+          <mat-form-field><input matInput formControlName="departmentName" placeholder="Department"></mat-form-field>&nbsp;&nbsp;&nbsp;
+          <mat-form-field><input matInput formControlName="positionTitle" placeholder="Position Title"></mat-form-field>&nbsp;&nbsp;&nbsp;
+        </form>
+      </div>
+      <button mat-raised-button (click)="create()" class="submit">Create</button>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+</div>

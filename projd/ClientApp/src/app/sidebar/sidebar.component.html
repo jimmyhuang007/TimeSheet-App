@@ -1,0 +1,41 @@
+
+<div class="sidebar">
+
+  <div class="topblock">
+    <div>
+      <img src="../../assets/user.png" id="person" />
+      <button (click)="tosetting()" type="button" id="setting" ><mat-icon [inline]="true" [ngStyle]="{'color':'#FBCECE'}">settings</mat-icon></button>
+    </div>
+
+    <div class="identification">
+      <p class="username">{{ user.firstName + ' ' + user.lastName}}</p>
+      <p>{{ user.positionTitle }}</p>
+    </div>
+  </div>
+
+  <div class="timeblock" *ngIf="user.employeeType === 2; else elseBlock">
+    <div class="biweekly" *ngFor="let biweek of timesheets" (click)="onTimesheetSelect(biweek.sheet1ID,biweek.sheet2ID);">
+      <mat-icon>date_range</mat-icon>
+      <div class="content">
+        <p class="name">{{biweek.firstname + ' ' + biweek.lastname}}</p>
+        <p class="date-range">{{ (biweek.endDate|date) + ' - ' + (biweek.startDate|date)}}</p>
+        <p class="status" [ngClass]="{'green': biweek.t1Status === 0, 'yellow': biweek.t1Status === 5, 'red': biweek.t1Status === 20, 'orange': biweek.t1Status === 10}">{{ biweek.t1Status | statusText: test  }}</p>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #elseBlock>
+    <div class="timeblock">
+      <div class="biweekly" *ngFor="let biweek of timesheets" (click)="onTimesheetSelect(biweek.sheet1ID,biweek.sheet2ID)">
+        <mat-icon>date_range</mat-icon>
+        <div class="content">
+          <p class="date-range">{{ (biweek.endDate|date) + ' - ' + (biweek.startDate|date)}}</p>
+          <p class="status" [ngClass]="{'green': biweek.t1Status === 0, 'yellow': biweek.t1Status === 5, 'red': biweek.t1Status === 20, 'orange': biweek.t1Status === 10}">{{ biweek.t1Status | statusText: test  }}</p>
+        </div>
+      </div>
+    </div>
+
+  </ng-template>
+
+
+</div>

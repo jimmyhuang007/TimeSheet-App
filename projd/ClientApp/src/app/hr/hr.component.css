@@ -1,0 +1,116 @@
+
+.mat-expansion-panel-header {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 0.2rem;
+  padding-left: 3rem;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  /*border-radius:20px;*/
+  transition: 0.4s;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+}
+
+  .active, .mat-expansion-panel-header:hover {
+    background-color: #ccc;
+  }
+
+.wrapper {
+  padding: 2rem 3rem 0 3rem;
+  overflow-y: auto;
+}
+
+.excelupdatebox {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  border: none;
+  text-align: center;
+  padding: 1rem;
+}
+
+.arrow {
+  font-size: 3em;
+  width: auto;
+  height: auto;
+}
+
+.button {
+  width: 18em;
+  height: auto;
+}
+
+.manualupdateflexbox {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+.manualupdatebox {
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline;
+  border: none;
+}
+
+.dropdown {
+  border: none;
+  width: 14em;
+  height: auto;
+}
+
+.form_1 {
+  padding-top: 20px;
+  box-sizing: border-box;
+  border: none;
+  text-align: left;
+  height: auto;
+}
+
+.button_for_manual_update {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.manualbutton {
+  width: 14rem;
+  height: auto;
+  border-radius: 5px;
+}
+
+.form_2 {
+  padding-top: 20px;
+  box-sizing: border-box;
+  padding-left: 2rem;
+  border: none;
+  text-align: left;
+  height: auto;
+  width: 100%;
+}
+
+.submit {
+  width: 11.5rem;
+  height: auto;
+  margin-left: 50rem;
+  background-color: #3BE579;
+  border-radius: 5px;
+}
+
+.mat-card {
+  display: flex;
+  background: url("../../assets/setting.jpg");
+  padding: 30px;
+  background-size: cover;
+  color: white;
+  font-size: 18px;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}

@@ -1,0 +1,27 @@
+<div class="login-page">
+  <div class="login-spacer"></div>
+  <div class="login-container">
+    <div id="login-fab" class="mdl-color--accent mdl-color-text--white">
+      <i id="lock-icon" class="material-icons">schedule</i>
+    </div>
+
+    <h2 class="card-heading">
+      Timesheet
+    </h2>
+
+    <form class="login-form" [formGroup]="loginForm">
+      <mat-form-field class="inputbox" floatLabel="never">
+        <input matInput formControlName="LoginID" placeholder="Username">
+      </mat-form-field>
+      <mat-form-field class="inputbox" floatLabel="never">
+        <input matInput formControlName="PasswordID" type='password' placeholder="Password">
+      </mat-form-field>
+      <small *ngIf="error">Invalid username/password</small>
+      <div class="buttons">
+        <div class="login">
+          <button (click)="onlogin()" type="submit" mat-raised-button>LOGIN</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

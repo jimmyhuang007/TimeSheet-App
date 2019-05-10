@@ -1,0 +1,263 @@
+<div class="wrapper">
+  <mat-card>
+    From {{timesheet1.startDate.value | date:'longDate'}} to {{timesheet2.endDate.value | date:'longDate'}}
+  </mat-card>
+  <br />
+  <form [formGroup]="applicationForm">
+    <ng-container formGroupName="timeSheet">
+      <mat-grid-list cols="2" rowHeight="450px" gutterSize="50">
+        <mat-grid-tile formGroupName="timeSheet1">
+          <div class="overlay" *ngIf="(user.employeeType === 1 && timesheet1.tStatus.value >= 10)
+                                      || (user.employeeType === 2 && !(timesheet1.tStatus.value === 10))"></div>
+            <mat-grid-tile-header>{{timesheet1.startDate.value | date}} to {{timesheet1.endDate.value | date}}</mat-grid-tile-header>
+            <mat-list role="list">
+              <mat-list-item role="listitem">
+                <img class="dateimg" src="{{'../../assets/' + fileNameDays1[0] + '.png'}}" style="margin-right: 60px" />
+                Sunday
+                <mat-form-field [floatLabel]="never">
+                  <small *ngIf="timesheet1.day1.invalid">Should be between 0 and 24</small>
+                  <input matInput formControlName="day1" (keypress)="numberOnly($event)" type="number">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet1.day1.setValue(0)">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+
+              </mat-list-item>
+              <mat-list-item role="listitem">
+                <img class="dateimg" src="{{'../../assets/' + fileNameDays1[1] + '.png'}}" style="margin-right: 56px" />
+                Monday
+                <mat-form-field floatLabel="never">
+                  <small *ngIf="timesheet1.day2.invalid">Should be between 0 and 24</small>
+                  <input matInput formControlName="day2" (keypress)="numberOnly($event)" type="number">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet1.day2.setValue(0)">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </mat-list-item>
+
+              <mat-list-item role="listitem">
+                <img class="dateimg" src="{{'../../assets/' + fileNameDays1[2] + '.png'}}" style="margin-right: 54px" />
+                Tuesday
+                <mat-form-field floatLabel="never">
+                  <small *ngIf="timesheet1.day3.invalid">Should be between 0 and 24</small>
+                  <input matInput formControlName="day3" (keypress)="numberOnly($event)" type="number">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet1.day3.setValue(0)">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </mat-list-item>
+
+              <mat-list-item role="listitem">
+                <img class="dateimg" src="{{'../../assets/' + fileNameDays1[3] + '.png'}}" style="margin-right: 30px" />
+                Wednesday
+                <mat-form-field floatLabel="never">
+                  <small *ngIf="timesheet1.day4.invalid">Should be between 0 and 24</small>
+                  <input matInput formControlName="day4" (keypress)="numberOnly($event)" type="number">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet1.day4.setValue(0)">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+
+              </mat-list-item>
+
+              <mat-list-item role="listitem">
+                <img class="dateimg" src="{{'../../assets/' + fileNameDays1[4] + '.png'}}" style="margin-right: 45px" />
+                Thursday
+                <mat-form-field floatLabel="never">
+                  <small *ngIf="timesheet1.day5.invalid">Should be between 0 and 24</small>
+                  <input matInput formControlName="day5" (keypress)="numberOnly($event)" type="number">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet1.day5.setValue(0)">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </mat-list-item>
+
+              <mat-list-item role="listitem">
+                <img class="dateimg" src="{{'../../assets/' + fileNameDays1[5] + '.png'}}" style="margin-right: 68px" />
+                Friday
+                <mat-form-field floatLabel="never">
+                  <small *ngIf="timesheet1.day6.invalid">Should be between 0 and 24</small>
+                  <input matInput formControlName="day6" (keypress)="numberOnly($event)" type="number">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet1.day6.setValue(0)">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </mat-list-item>
+
+              <mat-list-item role="listitem">
+                <img class="dateimg" src="{{'../../assets/' + fileNameDays1[6] + '.png'}}" style="margin-right: 48px" />
+                Saturday
+                <mat-form-field floatLabel="never">
+                  <small *ngIf="timesheet1.day7.invalid">Should be between 0 and 24</small>
+                  <input matInput formControlName="day7" (keypress)="numberOnly($event)" type="number">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet1.day7.setValue(0)">
+                    <mat-icon>close</mat-icon>
+                  </button>
+                </mat-form-field>
+              </mat-list-item>
+              <mat-grid-tile-footer>
+                Weekly Hours:&nbsp;{{
+timesheet1.day1.value +
+              timesheet1.day2.value +
+              timesheet1.day3.value +
+              timesheet1.day4.value +
+              timesheet1.day5.value +
+              timesheet1.day6.value +
+              timesheet1.day7.value
+                }}
+              </mat-grid-tile-footer>
+
+            </mat-list>
+          
+        </mat-grid-tile>
+        <mat-grid-tile formGroupName="timeSheet2">
+          <div class="overlay" *ngIf="(user.employeeType === 1 && timesheet2.tStatus.value >= 10)
+                                      || (user.employeeType === 2 && !(timesheet2.tStatus.value === 10))"></div>
+          <mat-grid-tile-header>{{timesheet2.startDate.value | date}} to {{timesheet2.endDate.value | date}}</mat-grid-tile-header>
+          <mat-list role="list">
+
+            <mat-list-item role="listitem">
+              <img class="dateimg" src="{{'../../assets/' + fileNameDays2[0] + '.png'}}" style="margin-right: 60px" />
+              Sunday
+              <mat-form-field floatLabel="never">
+                <small *ngIf="timesheet2.day1.invalid">Should be between 0 and 24</small>
+                <input matInput formControlName="day1" (keypress)="numberOnly($event)" type="number">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet2.day1.setValue(0)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+              <img class="dateimg" src="{{'../../assets/' + fileNameDays2[1] + '.png'}}" style="margin-right: 56px" />
+              Monday
+              <mat-form-field floatLabel="never">
+                <small *ngIf="timesheet2.day2.invalid">Should be between 0 and 24</small>
+                <input matInput formControlName="day2" (keypress)="numberOnly($event)" type="number">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet2.day2.setValue(0)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+              <img class="dateimg" src="{{'../../assets/' + fileNameDays2[2] + '.png'}}" style="margin-right: 54px" />
+              Tuesday
+              <mat-form-field floatLabel="never">
+                <small *ngIf="timesheet2.day3.invalid">Should be between 0 and 24</small>
+                <input matInput formControlName="day3" (keypress)="numberOnly($event)" type="number">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet2.day3.setValue(0)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+              <img class="dateimg" src="{{'../../assets/' + fileNameDays2[3] + '.png'}}" style="margin-right: 30px" />
+              Wednesday
+              <mat-form-field floatLabel="never">
+                <small *ngIf="timesheet2.day4.invalid">Should be between 0 and 24</small>
+                <input matInput formControlName="day4" (keypress)="numberOnly($event)" type="number">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet2.day4.setValue(0)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+              <img class="dateimg" src="{{'../../assets/' + fileNameDays2[4] + '.png'}}" style="margin-right: 45px" />
+              Thursday
+              <mat-form-field floatLabel="never">
+                <small *ngIf="timesheet2.day5.invalid">Should be between 0 and 24</small>
+                <input matInput formControlName="day5" (keypress)="numberOnly($event)" type="number">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet2.day5.setValue(0)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+              <img class="dateimg" src="{{'../../assets/' + fileNameDays2[5] + '.png'}}" style="margin-right: 68px" />
+              Friday
+              <mat-form-field floatLabel="never">
+                <small *ngIf="timesheet2.day6.invalid">Should be between 0 and 24</small>
+                <input matInput formControlName="day6" (keypress)="numberOnly($event)" type="number">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet2.day6.setValue(0)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">
+              <img class="dateimg" src="{{'../../assets/' + fileNameDays2[6] + '.png'}}" style="margin-right: 48px" />
+              Saturday
+              <mat-form-field floatLabel="never">
+                <small *ngIf="timesheet2.day7.invalid">Should be between 0 and 24</small>
+                <input matInput formControlName="day7" (keypress)="numberOnly($event)" type="number">
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="timesheet2.day7.setValue(0)">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </mat-list-item>
+
+            <mat-grid-tile-footer id="sheet2total">
+              Weekly Hours:&nbsp;{{
+ timesheet2.day1.value +
+              timesheet2.day2.value +
+              timesheet2.day3.value +
+              timesheet2.day4.value +
+              timesheet2.day5.value +
+              timesheet2.day6.value +
+              timesheet2.day7.value
+              }}
+            </mat-grid-tile-footer>
+
+          </mat-list>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div class="comments-container" *ngIf="timesheet1.tStatus.value != 20 && (user.employeeType === 2 || timesheet1.tStatus.value === 5)">
+        <label>Comments</label>
+        <textarea rows="2" formControlName="comments"></textarea>
+      </div>
+    </ng-container>
+  </form>
+
+
+
+  <mat-card class="mat-card-footer">
+    <div>
+      <h5>
+        Regular Hours: {{
+timesheet1.day1.value + timesheet1.day2.value + timesheet1.day3.value + timesheet1.day4.value + timesheet1.day5.value + timesheet1.day6.value + timesheet1.day7.value +
+      timesheet2.day1.value + timesheet2.day2.value + timesheet2.day3.value + timesheet2.day4.value + timesheet2.day5.value + timesheet2.day6.value + timesheet2.day7.value
+        - over1() - over2()
+        }}
+      </h5>
+      <h5>Overtime Hours: {{over1() + over2() }}</h5>
+      <h5>
+        Total Hours: {{
+timesheet1.day1.value + timesheet1.day2.value + timesheet1.day3.value + timesheet1.day4.value + timesheet1.day5.value + timesheet1.day6.value + timesheet1.day7.value +
+      timesheet2.day1.value + timesheet2.day2.value + timesheet2.day3.value + timesheet2.day4.value + timesheet2.day5.value + timesheet2.day6.value + timesheet2.day7.value
+        }}
+      </h5>
+    </div>
+
+    <div class="submit-button-container" *ngIf="user.employeeType === 1; else elseBlock">
+      <button *ngIf="timesheet1.tStatus.value < 10" class="submit" mat-raised-button (click)="onSubmit()">Submit</button>
+      <div *ngIf="timesheet1.tStatus.value == 20" class="bottext">Approved on: {{timesheet1.dateApproved.value| date }}</div>
+    </div>
+
+    <ng-template #elseBlock>
+      <div class="submit-button-container">
+        <button *ngIf="timesheet1.tStatus.value == 10" class="reject" mat-raised-button (click)="onReject()" color="warn">Reject</button>
+        <button *ngIf="timesheet1.tStatus.value == 10" class="approve" mat-raised-button (click)="onApprove()" color="accent">Approve</button>
+        <div *ngIf="timesheet1.tStatus.value == 20" class="bottext">Approved on: {{timesheet1.dateApproved.value| date }}</div>
+      </div>
+    </ng-template>
+
+  </mat-card>
+</div>
+
+<ng-container>
+  <h1 mat-dialog-title></h1>
+</ng-container>
