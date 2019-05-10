@@ -18,7 +18,7 @@ While the application should be able to run on other environments, doing so may 
 
 Screenshots
 Login
-(/ScreenShots/login.png)
+![Login](https://github.com/jimmyhuang007/TimeSheet-App/blob/master/ScreenShots/login.png)
 
 Dashboard
-(/ScreenShots/dashboard.png)
+![Dashboard](https://github.com/jimmyhuang007/TimeSheet-App/blob/master/ScreenShots/dashboard.png)
