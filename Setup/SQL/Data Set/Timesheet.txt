@@ -1,0 +1,32 @@
+CREATE TABLE [dbo].[Timesheet](
+	[TimesheetID] [int] IDENTITY(1000000,1) NOT NULL,
+	[EmployeeID] [int] NOT NULL,
+	[ManagerID] [int] NULL,
+	[StartDate] [date] NOT NULL,
+	[EndDate] [date] NULL,
+	[DateApproved] [date] NULL,
+	[Day1] [decimal](6, 4) NULL,
+	[Day2] [decimal](6, 4) NULL,
+	[Day3] [decimal](6, 4) NULL,
+	[Day4] [decimal](6, 4) NULL,
+	[Day5] [decimal](6, 4) NULL,
+	[Day6] [decimal](6, 4) NULL,
+	[Day7] [decimal](6, 4) NULL,
+	[Overtime] [decimal](7, 4) NULL,
+	[TStatus] [tinyint] NULL,
+	[Comments] [varchar](1000) NULL,
+ CONSTRAINT [PK_Timesheet] PRIMARY KEY CLUSTERED 
+(
+	[TimesheetID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[Timesheet]  WITH CHECK ADD  CONSTRAINT [FKEmployeeID] FOREIGN KEY([EmployeeID])
+REFERENCES [dbo].[Login] ([EmployeeID])
+ON UPDATE CASCADE
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[Timesheet] CHECK CONSTRAINT [FKEmployeeID]
+GO

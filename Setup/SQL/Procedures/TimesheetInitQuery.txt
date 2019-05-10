@@ -1,0 +1,7 @@
+CREATE PROCEDURE [dbo].[TimesheetInitQuery] @WeeksStart DATE, @WeeksEnd DATE, @EmployeeID INT
+AS
+BEGIN
+SELECT StartDate FROM Timesheet
+WHERE EmployeeID=@EmployeeID AND StartDate BETWEEN @WeeksStart AND @WeeksEnd ORDER BY StartDate DESC
+END
+GO

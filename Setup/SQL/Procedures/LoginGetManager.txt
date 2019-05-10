@@ -1,0 +1,6 @@
+CREATE PROCEDURE [dbo].[LoginGetManager]
+AS
+BEGIN
+SELECT * FROM Login WHERE EmployeeType=2
+END
+GO

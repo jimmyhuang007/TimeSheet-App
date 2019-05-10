@@ -1,0 +1,9 @@
+CREATE PROCEDURE [dbo].[LoginGet]
+AS
+BEGIN
+SELECT EmployeeID, LoginID, EmployeeType, LastName, FirstName, Email, DepartmentName, PositionTitle, ManagerID, PasswordID
+FROM Login 
+WHERE EmployeeType = 1 OR EmployeeType = 2
+ORDER BY LastName, FirstName
+END
+GO

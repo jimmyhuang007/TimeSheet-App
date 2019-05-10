@@ -1,0 +1,7 @@
+CREATE PROCEDURE [dbo].[TimesheetInitCreate] @EmployeeID int, @ManagerID int, @StartDate date, @EndDate date, @day1 decimal(6, 4), @day2 decimal(6, 4), @day3 decimal(6, 4), @day4 decimal(6, 4), @day5 decimal(6, 4), @day6 decimal(6, 4), @day7 decimal(6, 4), @TStatus tinyint, @Overtime decimal(6, 4)
+AS
+BEGIN
+INSERT INTO Timesheet (EmployeeID,ManagerID,StartDate,EndDate,Day1,Day2,Day3,Day4,Day5,Day6,Day7,Overtime,TStatus)
+VALUES (@EmployeeID,@ManagerID,@StartDate,@EndDate,@day1,@day2,@day3,@day4,@day5,@day6,@day7,@Overtime,@TStatus)
+END
+GO

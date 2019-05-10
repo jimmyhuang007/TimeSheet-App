@@ -1,0 +1,27 @@
+CREATE PROCEDURE [dbo].[LoginUpdate] (
+	@EmployeeID int,
+	@LoginID varchar(255),
+	@EmployeeType tinyint,
+	@LastName varchar(255),
+	@FirstName varchar(255),
+	@Email varchar(255),
+	@DepartmentName varchar(255),
+	@PositionTitle varchar(255),
+	@ManagerID int
+)
+AS
+BEGIN
+UPDATE Login 
+SET LoginID=@LoginID,
+	EmployeeType=@EmployeeType,
+	LastName=@LastName,
+	FirstName=@FirstName,
+	Email=@Email,
+	DepartmentName=@DepartmentName,
+	PositionTitle=@PositionTitle,
+	ManagerID=@ManagerID
+	WHERE EmployeeID=@EmployeeID;
+END
+GO
+
+

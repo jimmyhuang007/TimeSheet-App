@@ -1,0 +1,6 @@
+CREATE PROCEDURE [dbo].[LoginUser] @LoginID varchar(255), @PasswordID varchar(255)
+AS
+BEGIN
+SELECT EmployeeID, LoginID, EmployeeType, LastName, FirstName, Email, DepartmentName, PositionTitle, ManagerID FROM Login WHERE LoginID=@LoginID AND PasswordID=@PasswordID
+END
+GO

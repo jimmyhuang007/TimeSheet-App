@@ -1,0 +1,6 @@
+CREATE PROCEDURE [dbo].[TimesheetReject] @TimesheetID INT, @TStatus TINYINT, @Comments varchar(1000)
+AS
+BEGIN
+UPDATE Timesheet SET TStatus=@TStatus, Comments=@Comments WHERE TimesheetID=@TimesheetID
+END
+GO

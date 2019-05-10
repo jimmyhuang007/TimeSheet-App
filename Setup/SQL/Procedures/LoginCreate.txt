@@ -1,0 +1,19 @@
+CREATE PROCEDURE [dbo].[LoginCreate] (
+	@EmployeeID int,
+	@LoginID varchar(255),
+	@PasswordID varchar(255),
+	@EmployeeType tinyint,
+	@LastName varchar(255),
+	@FirstName varchar(255),
+	@Email varchar(255),
+	@DepartmentName varchar(255),
+	@PositionTitle varchar(255),
+	@ManagerID int
+)
+AS
+BEGIN
+	INSERT INTO Login VALUES (@EmployeeID,@LoginID,@PasswordID,@EmployeeType,@LastName,@FirstName,@Email,@DepartmentName,@PositionTitle,@ManagerID)
+END
+GO
+
+

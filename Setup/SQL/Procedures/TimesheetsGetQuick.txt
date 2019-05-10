@@ -1,0 +1,7 @@
+CREATE PROCEDURE [dbo].[TimesheetsGetQuick] @WeeksStart date, @WeeksEnd date, @EmployeeID int
+AS
+BEGIN
+SELECT TimesheetID, StartDate, EndDate, TStatus, EmployeeID, ManagerID FROM Timesheet
+WHERE EmployeeID=@EmployeeID AND StartDate BETWEEN @WeeksStart AND @WeeksEnd Order By StartDate DESC
+END
+GO

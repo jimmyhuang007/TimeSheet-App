@@ -1,0 +1,23 @@
+CREATE PROCEDURE [dbo].[TimesheetFilter] @StartDate DATE, @EndDate DATE
+AS
+BEGIN
+SELECT
+ATABLE.EmployeeID, ATABLE.StudentF, ATABLE.StudentL, ATABLE.ManagerID, ATABLE.ManagerF, ATABLE.ManagerL, SUM(ATABLE.Total) AS Total, SUM(ATABLE.Overtime) AS Overtime
+FROM
+(
+SELECT Timesheet.EmployeeID, Combine.StudentF, Combine.StudentL, Combine.ManagerID, Combine.ManagerF, Combine.ManagerL, Day1+Day2+Day3+Day4+Day5+Day6+day7 AS Total, Overtime 
+FROM Timesheet 
+LEFT JOIN
+(
+SELECT T1.FirstName AS StudentF, T1.LastName AS StudentL, T1.EmployeeID AS StudentID, T2.FirstName AS ManagerF, T2.LastName AS ManagerL, T2.EmployeeID AS ManagerID
+FROM Login T1, Login T2
+WHERE T1.ManagerID=T2.EmployeeID
+) AS Combine
+ON Timesheet.EmployeeID = Combine.StudentID
+WHERE Timesheet.TStatus=20 AND DateApproved BETWEEN @StartDate AND @EndDate
+) AS ATABLE
+GROUP BY ATABLE.EmployeeID, ATABLE.StudentF, ATABLE.StudentL, ATABLE.ManagerID, ATABLE.ManagerF, ATABLE.ManagerL
+END
+GO
+
+

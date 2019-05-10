@@ -1,0 +1,6 @@
+CREATE PROCEDURE [dbo].[TimesheetSubmit] @TimesheetID int, @Day1 decimal(6, 4), @Day2 decimal(6, 4), @Day3 decimal(6, 4), @Day4 decimal(6, 4), @Day5 decimal(6, 4), @Day6 decimal(6, 4), @Day7 decimal(6, 4), @Overtime decimal(7, 4), @Tstatus tinyint, @Comments varchar(1000), @ManagerID INT
+AS
+BEGIN
+UPDATE Timesheet SET Day1=@Day1, Day2=@Day2, Day3=@Day3, Day4=@Day4, Day5=@Day5, Day6=@Day6, Day7=@Day7, Overtime=@Overtime, TStatus=@Tstatus, Comments=@Comments, ManagerID=@ManagerID WHERE TimesheetID=@TimesheetID
+END
+GO

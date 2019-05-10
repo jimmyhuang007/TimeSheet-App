@@ -1,0 +1,6 @@
+CREATE PROCEDURE [dbo].[LoginGetUser] @EmployeeID INT
+AS
+BEGIN
+SELECT EmployeeID, LoginID, EmployeeType, LastName, FirstName, Email, DepartmentName, PositionTitle, ManagerID FROM Login WHERE EmployeeID=@EmployeeID
+END
+GO

@@ -1,0 +1,14 @@
+CREATE PROCEDURE [dbo].[TimesheetManager] @ManagerID INT
+AS
+BEGIN
+SELECT FirstName, LastName, Combine.* FROM 
+Login
+RIGHT JOIN
+(
+SELECT TimesheetID, StartDate, EndDate, TStatus, EmployeeID, ManagerID
+FROM Timesheet WHERE ManagerID=@ManagerID AND TStatus >=10
+) AS Combine
+ON Login.EmployeeID = Combine.EmployeeID
+ORDER BY Combine.TStatus ASC, Combine.StartDate DESC, Combine.EmployeeID
+END
+GO

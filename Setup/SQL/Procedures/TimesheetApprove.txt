@@ -1,0 +1,6 @@
+CREATE PROCEDURE [dbo].[TimesheetApprove] @TimesheetID INT, @TStatus TINYINT, @DateApproved DATE
+AS
+BEGIN
+UPDATE Timesheet SET TStatus=@TStatus, DateApproved=@DateApproved, Comments=Null WHERE TimesheetID=@TimesheetID
+END
+GO

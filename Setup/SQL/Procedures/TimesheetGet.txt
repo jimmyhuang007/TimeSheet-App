@@ -1,0 +1,6 @@
+CREATE PROCEDURE [dbo].[TimesheetGet] @TimesheetID INT
+AS
+BEGIN
+SELECT * FROM Timesheet WHERE TimesheetID=@TimesheetID
+END
+GO

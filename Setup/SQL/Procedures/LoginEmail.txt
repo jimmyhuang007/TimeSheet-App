@@ -1,0 +1,11 @@
+CREATE PROCEDURE [dbo].[LoginEmail]
+AS
+BEGIN
+SELECT EmployeeID, LOGIN.Email, T1.Email AS StudentMail
+FROM LOGIN
+LEFT JOIN
+( SELECT Email, ManagerID FROM Login
+) AS T1
+ON T1.ManagerID = Login.EmployeeID
+END
+GO

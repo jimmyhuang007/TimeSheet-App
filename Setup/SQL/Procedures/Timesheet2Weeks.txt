@@ -1,0 +1,6 @@
+CREATE PROCEDURE [dbo].[Timesheet2Weeks] @Week1ID INT, @Week2ID INT
+AS
+BEGIN
+SELECT * FROM Timesheet WHERE TimesheetID=@Week1ID OR TimesheetID=@Week2ID ORDER BY StartDate DESC
+END
+GO
