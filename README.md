@@ -4,7 +4,7 @@
 
 The timesheet application is application designed for employees to process time reporting procedure more efficiently and effectively.
 
-** Main Configuration** :
+** Main Configuration ** :
 
 - Database: Microsoft SQL Server 2017
 - While it is possible to use just the command tool, the interaction with MS SQL is primary conducted through the SQL Server Management Studio (SSMS)
