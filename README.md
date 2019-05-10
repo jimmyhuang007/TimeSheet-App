@@ -14,3 +14,4 @@ While the application should be able to run on other environments, doing so may 
 - Optional: Postman to send API requests
 - \* assumed installation of Node.js and npm package manager
 
+** Please Refer to 'Setup' folder for instructions **
