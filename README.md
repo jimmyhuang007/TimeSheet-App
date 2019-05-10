@@ -1,6 +1,6 @@
 # TimeSheet-App
 
-**Summary**** :       **
+**Summary**** : 
 
 The timesheet application is application designed for employees to process time reporting procedure more efficiently and effectively. The application was referred to, during the development phase, as project D where the D stands for digitize. Due the size of the project, a complete file is provided with all necessary documents. This technical guide severs to provide an explanation regarding the setup as well as the logics behind the application.
 
