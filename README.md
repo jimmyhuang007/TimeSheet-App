@@ -24,3 +24,6 @@ Login
 
 Dashboard
 ![Dashboard](https://github.com/jimmyhuang007/TimeSheet-App/blob/master/ScreenShots/dashboard.png)
+
+Bi-Weekly timesheet
+![Bi-Weekly timesheet](https://github.com/jimmyhuang007/TimeSheet-App/blob/master/ScreenShots/Screenshot3.PNG)
