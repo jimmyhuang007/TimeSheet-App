@@ -15,3 +15,10 @@ While the application should be able to run on other environments, doing so may 
 - \* assumed installation of Node.js and npm package manager
 
 ** Please Refer to 'Setup' folder for instructions **
+
+Screenshots
+Login
+https://github.com/jimmyhuang007/TimeSheet-App/blob/master/ScreenShots/login.png
+
+Dashboard
+https://github.com/jimmyhuang007/TimeSheet-App/blob/master/ScreenShots/dashboard.png
