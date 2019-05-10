@@ -1,8 +1,8 @@
 # TimeSheet-App
 
-**Summary**** : 
+**Summary** : 
 
-The timesheet application is application designed for employees to process time reporting procedure more efficiently and effectively. The application was referred to, during the development phase, as project D where the D stands for digitize. Due the size of the project, a complete file is provided with all necessary documents. This technical guide severs to provide an explanation regarding the setup as well as the logics behind the application.
+The timesheet application is application designed for employees to process time reporting procedure more efficiently and effectively. This technical guide severs to provide an explanation regarding the setup as well as the logics behind the application.
 
 **Configuration** :
 
@@ -11,8 +11,10 @@ While the application should be able to run on other environments, doing so may 
 - Database: Microsoft SQL Server 2017
 - While it is possible to use just the command tool, the interaction with MS SQL is primary conducted through the SQL Server Management Studio (SSMS)
 - IDE: Microsoft Visual Studio 2017
+- ASP.NET 2.1 Web framework
+- Angular 7 for Web presentation
 - Optional: Postman to send API requests
-- \* assumed installation of Node.js and npm package manager
+- assumed installation of Node.js and npm package manager
 
 ** Please Refer to 'Setup' folder for instructions **
 
